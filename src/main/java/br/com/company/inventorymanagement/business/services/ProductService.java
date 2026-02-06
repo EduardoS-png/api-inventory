@@ -1,10 +1,10 @@
-package br.com.company.inventorymanagement.services;
+package br.com.company.inventorymanagement.business.services;
 
-import br.com.company.inventorymanagement.dto.product.ProductCreateDTO;
+import br.com.company.inventorymanagement.business.dto.product.ProductCreateDTO;
 import br.com.company.inventorymanagement.exceptions.BusinessException;
 import br.com.company.inventorymanagement.exceptions.NotFoundException;
-import br.com.company.inventorymanagement.model.Product;
-import br.com.company.inventorymanagement.repository.ProductRepository;
+import br.com.company.inventorymanagement.infrastructure.model.Product;
+import br.com.company.inventorymanagement.infrastructure.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
