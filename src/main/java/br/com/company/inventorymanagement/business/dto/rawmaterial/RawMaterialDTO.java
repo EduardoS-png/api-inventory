@@ -1,4 +1,4 @@
-package br.com.company.inventorymanagement.dto.rawmaterial;
+package br.com.company.inventorymanagement.business.dto.rawmaterial;
 
 import java.math.BigDecimal;
 

@@ -1,10 +1,10 @@
-package br.com.company.inventorymanagement.services;
+package br.com.company.inventorymanagement.business.services;
 
-import br.com.company.inventorymanagement.dto.rawmaterial.RawMaterialCreateDTO;
+import br.com.company.inventorymanagement.business.dto.rawmaterial.RawMaterialCreateDTO;
 import br.com.company.inventorymanagement.exceptions.BusinessException;
 import br.com.company.inventorymanagement.exceptions.NotFoundException;
-import br.com.company.inventorymanagement.model.RawMaterial;
-import br.com.company.inventorymanagement.repository.RawMaterialRepository;
+import br.com.company.inventorymanagement.infrastructure.model.RawMaterial;
+import br.com.company.inventorymanagement.infrastructure.repository.RawMaterialRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package br.com.company.inventorymanagement.model;
+package br.com.company.inventorymanagement.infrastructure.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,13 +13,13 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tb_raw_materials")
-public class RawMaterial {
+@Table(name = "tb_products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    private BigDecimal stockQuantity;
+    private BigDecimal price;
 }
