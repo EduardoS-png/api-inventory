@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface ProductRawMaterialMapper {
 
+    @Mapping(source = "product.id", target = "productId")
     @Mapping(source = "rawMaterial.id", target = "rawMaterialId")
     @Mapping(source = "rawMaterial.name", target = "rawMaterialName")
     ProductRawMaterialDTO toDTO(ProductRawMaterial entity);
