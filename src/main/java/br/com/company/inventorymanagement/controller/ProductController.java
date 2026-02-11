@@ -6,6 +6,7 @@ import br.com.company.inventorymanagement.business.mapper.ProductMapper;
 import br.com.company.inventorymanagement.business.services.ProductService;
 import br.com.company.inventorymanagement.infrastructure.model.Product;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,9 +45,17 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    private ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
-        productService.deleteByIdProduct(id);
-        return ResponseEntity.noContent().build();
+    private ResponseEntity<String> deleteProduct(@PathVariable Long id) {
+        try {
+            productService.deleteByIdProduct(id);
+            return ResponseEntity.ok().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Cannot delete product because it is associated with raw materials.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error deleting product.");
+        }
     }
 
     @PutMapping("/{id}")
